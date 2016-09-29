@@ -9,14 +9,22 @@ import (
 	"github.com/peterhellberg/hn"
 )
 
-var numStories = 10
-var client *hn.Client
-var cache []*hn.Item
+var (
+	numStories = 10
+	offset     = 0
+
+	client *hn.Client
+	cache  []*hn.Item
+)
 
 func init() {
 	var err error
 	if len(os.Args) > 1 {
 		numStories, err = strconv.Atoi(os.Args[1])
+		e(err)
+	}
+	if len(os.Args) > 2 {
+		offset, err = strconv.Atoi(os.Args[2])
 		e(err)
 	}
 }
@@ -32,7 +40,7 @@ func main() {
 	c := make(chan bool)
 	cache = make([]*hn.Item, numStories, numStories)
 
-	for i, id := range ids[:numStories] {
+	for i, id := range ids[offset : offset+numStories] {
 		go fetch(i, id, cache, c)
 	}
 
@@ -43,7 +51,7 @@ func main() {
 
 	for i, item := range cache {
 		fmt.Printf("%2d. \033[1m%s\033[0m\n    \033[2m%s\033[0m\n",
-			i, item.Title, item.URL)
+			i+offset, item.Title, item.URL)
 	}
 }
 

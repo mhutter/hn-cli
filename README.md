@@ -10,9 +10,10 @@ Minimal Hacker News CLI.
 
 ## Usage
 
-    hn [number of stories]
+    hn [<number of stories>] [<offset>]
 
-**number of stories** defaults to 10
+- **number of stories** defaults to `10`
+- **offset** defaults to `0`
 
 
 ## Examples
