@@ -1,0 +1,10 @@
+---
+language: go
+go:
+  - stable
+
+install: GO111MODULE=on go build -o /tmp/hn ./hn
+
+script:
+  - test 20 -eq "$(/tmp/hn | wc -l)"
+  - test 4 -eq "$(/tmp/hn 2 | wc -l)"

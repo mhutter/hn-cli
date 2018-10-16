@@ -1,5 +1,9 @@
 # hn-cli
 
+[![Build Status](https://travis-ci.com/mhutter/hn-cli.svg?branch=master)](https://travis-ci.com/mhutter/hn-cli)
+[![Go Report Card](https://goreportcard.com/badge/github.com/mhutter/hn-cli)](https://goreportcard.com/report/github.com/mhutter/hn-cli)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 Minimal Hacker News CLI.
 
 
@@ -21,6 +25,10 @@ Minimal Hacker News CLI.
 ![Screenshot](screenshot.png)
 
 
-## TODO
+## License
 
-- [ ] local caching
+MIT (see LICENSE)
+
+---
+
+> [Manuel Hutter](https://hutter.io) - GitHub [@mhutter](https://github.com)
