@@ -1,3 +1,5 @@
 module github.com/mhutter/hn-cli
 
-require github.com/peterhellberg/hn v0.0.0-20160106115829-a27cdd2ca854
+go 1.14
+
+require github.com/peterhellberg/hn v0.0.0-20200407070403-5537ecc08ef1
